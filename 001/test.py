@@ -12,7 +12,7 @@ print ("----------------------------")
 print ("Input test:")
 inputTest = input()
 print("Priting input test: " + inputTest)
-print("Len test: ")
+print("Len test: " + str(len(inputTest)))
 print(len(inputTest))
 
 from imported import *
