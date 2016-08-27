@@ -17,3 +17,5 @@ print(len(inputTest))
 
 from imported import *
 foo(2, 2)
+print(float('3.14'))
+print(int('3'))
