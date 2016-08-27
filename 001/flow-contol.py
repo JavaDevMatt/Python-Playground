@@ -18,3 +18,16 @@ while i < 10:
         break
 
 print('Outside of while')
+
+
+#--------------------
+#for ragne test
+print()
+print('range test: ')
+for i in range(10):
+    print(i)
+
+print('range test2: ')
+for i in range(5, 10):
+    print(i)
+
