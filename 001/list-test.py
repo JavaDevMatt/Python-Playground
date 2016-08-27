@@ -15,3 +15,4 @@ while '1' in letters:
     letters.remove('1')
 
 print(letters)
+print(letters[1])
