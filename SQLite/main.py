@@ -2,6 +2,10 @@ import sqlite3
 import time
 import datetime
 import random
+import matplotlib.pyplot as plt
+from dateutil import parser
+from matplotlib import style
+style.use('fivethirtyeight')
 
 conn = sqlite3.connect('tutorial.db')
 c = conn.cursor()
@@ -58,6 +62,22 @@ def read_from_db():
         print(row[0])
 
 
-read_from_db()
+def graph_data():
+    c.execute('SELECT datestamp, value FROM stuffToPlot')
+    data = c.fetchall()
+
+    dates = []
+    values = []
+
+    for row in data:
+        dates.append(parser.parse(row[0]))
+        values.append(row[1])
+
+    plt.plot_date(dates, values, '-')
+    plt.show()
+
+
+#read_from_db()
+graph_data()
 c.close
 conn.close()
