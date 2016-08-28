@@ -29,14 +29,35 @@ def dynamic_data_entry():
               (unix, date, keyword, value))
 
     conn.commit()
-
-
-create_table()
-#data_entry()
-for i in range(10):
-    dynamic_data_entry()
     time.sleep(1)
 
 
+def read_from_db():
+    c.execute('SELECT * FROM stuffToPlot')
+    data = c.fetchall()
+    print(data)
+    for row in data:
+        print(row)
+
+    c.execute('SELECT * FROM stuffToPlot WHERE value = 3')
+    data = c.fetchall()
+    print(data)
+    for row in data:
+        print(row)
+
+    c.execute('SELECT * FROM stuffToPlot WHERE unix > 1452554972')
+    data = c.fetchall()
+    print(data)
+    for row in data:
+        print(row)
+
+    c.execute('SELECT value, datestamp FROM stuffToPlot WHERE unix > 1452554972')
+    data = c.fetchall()
+    print(data)
+    for row in data:
+        print(row[0])
+
+
+read_from_db()
 c.close
 conn.close()
