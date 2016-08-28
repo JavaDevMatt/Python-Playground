@@ -1,2 +1,3 @@
 *.pyc
 Unit-Testing/.cache
+.idea
