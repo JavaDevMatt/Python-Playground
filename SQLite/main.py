@@ -77,7 +77,19 @@ def graph_data():
     plt.show()
 
 
+def update_data():
+    c.execute("UPDATE stuffToPlot SET value = 666 WHERE value = 8")
+    conn.commit()
+
+
+def delete_data():
+    c.execute("DELETE FROM stuffToPlot WHERE value = 1")
+    conn.commit()
+
+print(100*'-')
 #read_from_db()
-graph_data()
+#graph_data()
+#update_data()
+delete_data()
 c.close
 conn.close()
