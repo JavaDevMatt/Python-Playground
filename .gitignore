@@ -3,3 +3,4 @@ Unit-Testing/.cache
 .idea
 001/tests/.cache
 tutorial.db
+Flask/microblog/flask
