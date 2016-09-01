@@ -16,6 +16,7 @@ class Employee:
 print(50*"-")
 
 e1 = Employee("Don Juan", 15000)
+setattr(e1, 'salary', 2000)
 e1.display_count()
 e1.display_employee()
 
@@ -24,6 +25,10 @@ print(50*"-")
 e2 = Employee()
 e2.display_count()
 e2.display_employee()
+
+print(50*"-")
+
+print(Employee.__name__)
 
 print(50*"-")
 
