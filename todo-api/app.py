@@ -18,6 +18,10 @@ tasks = [
     }
 ]
 
+@app.route('/hello')
+def hello_world():
+    return 'Hello, World!'
+
 @app.route('/todo/api/v1.0/tasks', methods=['GET'])
 def get_tasks():
     return jsonify({'tasks': tasks})
@@ -55,4 +59,7 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,
+            host=app.config.get("HOST", "0.0.0.0"),
+            port=app.config.get("PORT", 9000)
+            )
